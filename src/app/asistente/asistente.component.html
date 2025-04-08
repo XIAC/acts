@@ -1,0 +1,25 @@
+<h2>Registro de Escuela Sabática</h2>
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label>Nombre:</label>
+    <input type="text" [(ngModel)]="asistente().nombre"  name="nombre"  required>
+  </div>
+  <div>
+    <label>Edad:</label>
+    <input  type="number" [(ngModel)]="asistente().edad" name="edad" >
+  </div>
+
+  <div>
+    <label>Clase:</label>
+    <select [(ngModel)]="asistente().claseEscSabatica" name="clase">
+      <option *ngFor="let clase of clases" [value]="clase">
+        {{ clase }}
+      </option>
+    </select>
+  </div>
+  <div>
+    <label>Fecha:</label>
+    <input type="date" [(ngModel)]="asistente().fecha" name="fecha" >
+  </div>
+  <button type="submit">Registrar</button>
+</form>
